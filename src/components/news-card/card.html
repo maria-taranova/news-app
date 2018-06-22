@@ -1,0 +1,44 @@
+<ion-card *ngIf="item">
+  <ion-item>
+    <ion-avatar item-start>
+      <img src={{item.urlToImage}} [class.hide]="!item.urlToImage">
+    </ion-avatar>
+    <h2>{{item.source.name}}</h2>
+    <p>{{item.publishedAt | timeAgo}} by {{item.author}}</p>
+  </ion-item>
+  <a href="{{item.url}}" target="_blank" [class.hide]="!item.urlToImage">
+  <img src={{item.urlToImage}}>
+</a>
+  <ion-card-content>
+    <h3>{{item.title}}</h3>
+
+    <p>{{item.description}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+
+
+      <button ion-button outline clear small icon-left (click)="unbookmarkedCard()" *ngIf="isBookmark">
+   <ion-icon name="bookmark"></ion-icon>
+Saved
+</button>
+      <button ion-button outline clear small icon-left (click)="bookmarkedCard()" *ngIf="!isBookmark">
+
+   <ion-icon name="bookmark-outlined"></ion-icon>
+Save for later
+</button>
+
+
+    </ion-col>
+    <ion-col center text-right>
+      <button ion-button outline icon-left small>
+        <ion-icon name="arrow-dropright"></ion-icon>
+        <div><a href="{{item.url}}" target="_blank">Read now</a></div>
+      </button>
+    </ion-col>
+
+
+  </ion-row>
+
+</ion-card>

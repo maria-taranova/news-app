@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sources
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-list inset>
+      <button ion-item *ngFor="let item of Sources" (click)="pushPage(item.id)">
+        {{item.name}}
+        <ion-note item-end>{{item.category}}</ion-note>
+      </button>
+      <p *ngIf="dbError">{{dbError}}</p>
+    </ion-list>
+  </ion-list>
+</ion-content>

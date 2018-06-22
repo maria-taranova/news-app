@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (search)=" onSearch($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  <p *ngIf="isError">Not able to connect to database</p>
+
+  <ion-content overflow-scroll="true">
+    <div class="list">
+
+      <news-card *ngFor="let item of News" [item]="item"></news-card>
+    </div>
+  </ion-content>
+</ion-content>

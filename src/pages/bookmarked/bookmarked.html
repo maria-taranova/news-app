@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Saved Articles
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+ <ion-content overflow-scroll="true">
+    <div class="list">
+       <news-card *ngFor="let item of SavedNews" [item]="item"></news-card>
+    </div>
+  </ion-content>
+
+
