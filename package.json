@@ -11,7 +11,7 @@
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d www"
   },
   "dependencies": {
     "@angular/animations": "5.2.10",
@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.9",
+    "gh-pages": "^1.2.0",
     "typescript": "~2.6.2"
   },
   "description": "A news app based on Ionic"
